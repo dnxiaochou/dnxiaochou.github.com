@@ -7,6 +7,8 @@ tags: []
 ---
 {% include JB/setup %}
 
+## Teaching
+
 Jannet实现了如何将一个非负十进制整数转化为其二进制和十六进制形式。在实现中，定了了4个函数。
     
 函数xj_get_binary_char()返回一个二进制字符，对于非法参数，返回一个字符X。
