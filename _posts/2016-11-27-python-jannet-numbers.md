@@ -7,7 +7,8 @@ tags: []
 ---
 {% include JB/setup %}
 Jannet完成了两个程序，将一个非负十进制整数转化为其二进制和十六进制数。
-十进制转为二进制
+
+1. 十进制转为二进制
 
     #!/usr/bin/env python
     # convert decimal to binary
@@ -37,7 +38,7 @@ Jannet完成了两个程序，将一个非负十进制整数转化为其二进�
         result = xj_dec_to_binary (n)
         print("The binary code of %s is: %s" % (str_n, result))
 
-十进制转为十六进制
+2. 十进制转为十六进制
 
     #!/usr/bin/env python
     # This program receives a decimal and print its hexadecimal code
