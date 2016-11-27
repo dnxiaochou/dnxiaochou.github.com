@@ -61,8 +61,10 @@ Jannet完成了两个程序，将一个非负十进制整数转化为其二进�
     
         result = xj_dec_to_binary (n)
         print ("The binary code of %s is: %s" % (str_n, result))
+    
         result = xj_dec_to_hex (n)
         print ("The hexadecimal code of %s is: %s" % (str_n, result))
+    
         print ("")
 
 在Linux系统的终端里，运行上述Python脚本文件，测试结果如下。
