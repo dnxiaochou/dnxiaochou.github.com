@@ -6,15 +6,26 @@ category:
 tags: []
 ---
 {% include JB/setup %}
-Jannet完成了两个程序，将一个非负十进制整数转化为其二进制和十六进制数。
+Jannet实现了如何将一个非负十进制整数转化为其二进制和十六进制形式。在实现中，定了了4个函数：
 
-十进制转为二进制和十六进制。
+xj_get_binary_char()返回一个二进制字符，对于非法参数，返回一个字符X；
+
+xj_get_hex_char()返回一个十六进制字符，对于非法参数，返回一个字符X；
+
+xj_dec_to_binary()返回一个二进制字符串；
+
+xj_dec_to_hex()返回一个十六进制字符串。
+
+最后，在程序入口，调用Python内置的函数raw_input()接受用户输入，分别调用以上函数转化为二进制字符串和十六进制字符串并打印出来。
 
     #!/usr/bin/env python
     
     # receives a number and return its binary char
     def xj_get_binary_char (n) :
-        return bytes (n)
+        if (n >= 0 && n <=1) :
+            return bytes (n)
+        else
+            return "X"
     
     
     # receives a number and return its hexadecimal char
