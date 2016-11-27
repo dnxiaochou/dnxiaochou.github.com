@@ -13,7 +13,7 @@ Jannet完成了两个程序，将一个非负十进制整数转化为其二进�
     #!/usr/bin/env python
     
     # receives a number and return a char
-    def xj_hex_digit (n) :
+    def xj_get_hex_digit (n) :
         if (n < 10) :
             return bytes (n)
         elif (r == 10):
@@ -47,7 +47,7 @@ Jannet完成了两个程序，将一个非负十进制整数转化为其二进�
         res = ""
         while (n != 0):
             r = n % 16
-            r = xj_hex_digit (r)
+            r = xj_get_hex_digit (r)
             res = r + res
             n = n / 16 
         return res
