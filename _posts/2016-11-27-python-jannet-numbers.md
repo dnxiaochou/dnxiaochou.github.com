@@ -60,9 +60,10 @@ Jannet完成了两个程序，将一个非负十进制整数转化为其二进�
             quit ()
     
         result = xj_dec_to_binary (n)
-        print("The binary code of %s is: %s" % (str_n, result))
+        print ("The binary code of %s is: %s" % (str_n, result))
         result = xj_dec_to_hex (n)
-        print("The hexadecimal code of %s is: %s" % (str_n, result))
+        print ("The hexadecimal code of %s is: %s" % (str_n, result))
+        print ("")
 
 在Linux系统的终端里，运行上述Python脚本文件，测试结果如下。
 
@@ -70,13 +71,15 @@ Jannet完成了两个程序，将一个非负十进制整数转化为其二进�
     please input a number: 91
     The binary code of 91 is: 1011011
     The hexadecimal code of 91 is: 5B
+    
     please input a number: 250
     The binary code of 250 is: 11111010
     The hexadecimal code of 250 is: FA
+    
     please input a number: 2147483647
     The binary code of 2147483647 is: 1111111111111111111111111111111
     The hexadecimal code of 2147483647 is: 7FFFFFFF
+    
     please input a number: 0
     0
-
 
