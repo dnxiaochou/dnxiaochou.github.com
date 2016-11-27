@@ -6,15 +6,11 @@ category:
 tags: []
 ---
 {% include JB/setup %}
-Jannet实现了如何将一个非负十进制整数转化为其二进制和十六进制形式。在实现中，定了了4个函数：
-xj_get_binary_char()返回一个二进制字符，对于非法参数，返回一个字符X；
-xj_get_hex_char()返回一个十六进制字符，对于非法参数，返回一个字符X；
-xj_dec_to_binary()返回一个二进制字符串；
-xj_dec_to_hex()返回一个十六进制字符串。
-最后，在程序入口，调用Python内置的函数raw_input()接受用户输入，分别调用以上函数转化为二进制字符串和十六进制字符串并打印出来。
 
-    #!/usr/bin/env python
+Jannet实现了如何将一个非负十进制整数转化为其二进制和十六进制形式。在实现中，定了了4个函数。
     
+函数xj_get_binary_char()返回一个二进制字符，对于非法参数，返回一个字符X。
+
     # receives a number and return its binary char
     def xj_get_binary_char (n) :
         if (n >= 0 & n <=1) :
@@ -22,7 +18,8 @@ xj_dec_to_hex()返回一个十六进制字符串。
         else :
             return "X"
     
-    
+函数xj_get_hex_char()返回一个十六进制字符，对于非法参数，返回一个字符X。
+
     # receives a number and return its hexadecimal char
     def xj_get_hex_char (n) :
         if (n < 10) :
@@ -43,6 +40,8 @@ xj_dec_to_hex()返回一个十六进制字符串。
             return "X"
     
     
+函数xj_dec_to_binary()返回一个二进制字符串。
+
     # receives a number and return its binary string
     def xj_dec_to_binary (n):
         res = ""
@@ -54,6 +53,8 @@ xj_dec_to_hex()返回一个十六进制字符串。
         return res
 
     
+函数xj_dec_to_hex()返回一个十六进制字符串。
+
     # receives a number and return its hexadecimal string
     def xj_dec_to_hex (n) :
         res = ""
@@ -65,6 +66,8 @@ xj_dec_to_hex()返回一个十六进制字符串。
         return res
     
     
+在程序入口处，调用Python内置的函数raw_input()接受用户输入，分别调用上述已定义的函数将十进制整数转化为二进制字符串和十六进制字符串、并打印出来。
+
     # program entry
     while (True):
         str_n = raw_input ("please input a number: ")
@@ -98,3 +101,6 @@ xj_dec_to_hex()返回一个十六进制字符串。
     please input a number: 0
     0
 
+## Homework
+
+添加两个函数，实现十进制数转为八进制数。提示：八进制数的字符用0、1、2、3、4、5、6、7表示。
