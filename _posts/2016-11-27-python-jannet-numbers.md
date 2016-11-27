@@ -31,6 +31,7 @@ Jannet完成了两个程序，将一个非负十进制整数转化为其二进�
         else :
             return "X"
     
+    
     # receives a number and return its binary
     def xj_dec_to_binary (n):
         res = ""
@@ -52,6 +53,7 @@ Jannet完成了两个程序，将一个非负十进制整数转化为其二进�
         return res
     
     
+    # program entry
     while (True):
         str_n = raw_input ("please input a number: ")
         n = int (str_n)
