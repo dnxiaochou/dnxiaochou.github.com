@@ -104,3 +104,72 @@ Jannet实现了如何将一个非负十进制整数转化为其二进制和十�
 ## Homework
 
 添加两个函数，实现十进制数转为八进制数。提示：八进制数的字符用0、1、2、3、4、5、6、7表示。
+
+Jannet添加了函数get_octal_char()，其功能是将一个0～7的数字转为字符串；如果输入的是0～7范围之外的数字，返回一个字符X。
+
+    def xj_get_octal_char (n):
+        if (n >= 0 & n <= 7):
+            return bytes (n)
+        else :
+            return "X"
+
+Jannet抽象了出来函数dec_to_radix()，形式参数n是输入的十进制数，该函数的功能是把n转为radix进制。
+
+    def xj_dec_to_radix (n, radix) :
+        res = ""
+        while (n != 0) :
+            r = n % radix
+            if (radix == 2) :
+                r = xj_get_binary_char (r)
+            elif (radix == 8) :
+                r = xj_get_octal_char (r)
+            elif (radix == 16) :
+                r = xj_get_hexadecimal_char (r)
+            else :
+                r = "X"
+            res = r + res
+            n = n / radix
+        return res
+
+在程序入口处，接受输入并转为整数类型后，连续3次调用函数dec_to_radix()，依次使用2、8和16表示要转为的进制。
+
+    while (True):
+        str_n = raw_input ("please input a number: ")
+        n = int (str_n)
+        if (n == 0):
+            print (0)
+            quit ()
+    
+        # result = xj_dec_to_binary (n)
+        res = xj_dec_to_radix (n, 2)
+        print ("The binary of %s is %s" % (str_n, res))
+    
+        res = xj_dec_to_radix (n, 8)
+        print ("The octal of %s is %s" % (str_n, res))
+        
+        # result = xj_dec_to_hex (n)
+        res = xj_dec_to_radix (n, 16)
+        print ("The hexadecimal of %s is %s" % (str_n, res))
+    
+        print ("")
+
+在Linux系统的终端里，运行上述Python脚本文件，测试结果如下。
+
+    please input a number: 250
+    The binary of 250 is 11111010
+    The octal of 250 is 372
+    The hexadecimal of 250 is FA
+    
+    please input a number: 91
+    The binary of 91 is 1011011
+    The octal of 91 is 133
+    The hexadecimal of 91 is 5B
+    
+    please input a number: 2147483647
+    The binary of 2147483647 is 1111111111111111111111111111111
+    The octal of 2147483647 is 17777777777
+    The hexadecimal of 2147483647 is 7FFFFFFF
+    
+    please input a number: 0
+    0
+
