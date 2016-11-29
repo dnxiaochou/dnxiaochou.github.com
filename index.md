@@ -1,10 +1,10 @@
 ---
 layout: page
-title: 欢迎访问我的博客
+title: Bright的博客
 ---
 {% include JB/setup %}
 
-文件列表
+文章
 
 <ul class="posts">
   {% for post in site.posts %}
