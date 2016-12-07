@@ -249,3 +249,37 @@ Jannet第一次写出的程序长这样 :(
             n = n-1
         print ( "The decimal code of %s is : %d" % (str_n , res ))
 
+指导Jannet修改程序，方便以后使用。
+
+    #!/usr/bin/env python
+    
+    def xj_math_pow (m, n):
+        result = 1
+        i = 0
+        while (i < n):
+            result = m * result
+            i = i + 1
+        return result
+    
+    
+    def xj_binary_to_decimal (str_n):
+        length = len (str_n)
+        result = 0
+        i = 0
+        while (i < length):
+            tmp = str_n[length - 1 - i]
+            bit = int (tmp)
+            if (bit == 1):
+                result = result + xj_math_pow(2, i)
+            i = i + 1
+        return result
+    
+    
+    while (True):
+        str_n = raw_input ("please input a number: ")
+        if (str_n == "0"):
+            quit ()
+        res = xj_binary_to_decimal (str_n)
+        print ("The decimal code of %s is : %d" % (str_n, res))
+
+
