@@ -226,3 +226,26 @@ Jannet抽象了出来函数dec_to_radix()，形式参数n是输入的十进制�
 	str[1:4]                # 返回ello
 
 。
+
+Jannet第一次写出的程序长这样 :(
+
+    #!/usr/bin/env python
+    while (True):
+        str_n = raw_input ("please input a number: ")
+        if (str_n == "0"):
+            quit ()
+        p = len (str_n)
+        n = p
+        res = 0
+        while (n != 0):
+            r = str_n[n-1]
+            R = int (r)
+            m = 1
+            i = 1
+            while ( i<= p-n ):
+                m = 2*m
+                i = i+1
+            res = R*m + res
+            n = n-1
+        print ( "The decimal code of %s is : %d" % (str_n , res ))
+
