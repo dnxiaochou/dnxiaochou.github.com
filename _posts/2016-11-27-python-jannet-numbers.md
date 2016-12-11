@@ -293,4 +293,88 @@ Jannet第一次写出的程序长这样 :(
 	cmp("abc","abd")          # 返回-1
 	cmp("abc","a")            # 返回1
 
-。
+也可以使用>、<、==、>=和<=等操作符来判断。下面是Jannet写的代码。
+
+    #!/usr/bin/env python
+    def xj_math_pow(m,n):
+        result = 1
+        i = 0
+        while (i < n):
+            result = m * result
+            i = i + 1
+        return result
+    
+    def xj_hex_char_to_decimal (n):
+        res = ord (n)
+        if ((res >= 48) & (res <= 57)):
+            res = 0 + (res - 48)
+        elif ((res >= 65) & (res <= 70)):
+            res = 10 + (res - 65)
+        else :
+            res = 0
+        return res
+    
+    def xj_hex_char_to_dec (n):
+        if ( n == 'A'):
+            bit = 10 
+        elif (n == 'B'):
+            bit = 11
+        elif (n == 'C'):
+            bit = 12
+        elif (n == 'D'):
+            bit = 13
+        elif (n == 'E'):
+            bit = 14
+        elif (n == 'F'):
+            bit = 15
+        elif ((n >= '0') & (n <= '9')):
+            bit = int (n)
+        else :
+            bit = 0
+        return bit
+    
+    def xj_change_to_decimal (m,str_n):
+        length = len (str_n)
+        result = 0
+        i = 0
+        while ( i < length ):
+            tmp = str_n[length - 1 - i]
+            bit = xj_hex_char_to_decimal (tmp)
+    #        bit = xj_hex_char_to_dec (tmp)
+            if (bit != 0):
+                result = result + bit * xj_math_pow(m,i)
+            i = i + 1
+        return result
+    
+    while (True):
+        str_m = raw_input ("please input the number of the jinzhishu: ")
+        m = int(str_m)
+        str_n = raw_input("please input a number: ")
+        if (str_n == "0"):
+            quit()
+        res = xj_change_to_decimal (m,str_n)
+        print ("The decimal code of %s is : %d" % (str_n,res))
+
+
+    在Linux终端运行程序，其结果为：
+    please input the number of the jinzhishu: 16   
+    please input a number: 7FFFFFFF
+    The decimal code of 7FFFFFFF is : 2147483647
+    please input the number of the jinzhishu: 16
+    please input a number: 123456789ABCDEF
+    The decimal code of 123456789ABCDEF is : 81985529216486895
+    please input the number of the jinzhishu: 16
+    please input a number: F 
+    The decimal code of F is : 15
+    please input the number of the jinzhishu: 8
+    please input a number: 123
+    The decimal code of 123 is : 83
+    please input the number of the jinzhishu: 8
+    please input a number: 100
+    The decimal code of 100 is : 64
+    please input the number of the jinzhishu: 2
+    please input a number: 11111110
+    The decimal code of 11111110 is : 254
+    please input the number of the jinzhishu: 2
+    please input a number: 11
+    The decimal code of 11 is : 3
