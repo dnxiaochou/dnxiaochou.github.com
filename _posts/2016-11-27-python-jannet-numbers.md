@@ -355,8 +355,7 @@ Jannet第一次写出的程序长这样 :(
         res = xj_change_to_decimal (m,str_n)
         print ("The decimal code of %s is : %d" % (str_n,res))
 
-
-    在Linux终端运行程序，其结果为：
+在Linux终端运行程序，其结果为：
 
     please input the number of the jinzhishu: 16   
     please input a number: 7FFFFFFF
