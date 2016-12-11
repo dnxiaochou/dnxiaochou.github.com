@@ -283,3 +283,14 @@ Jannet第一次写出的程序长这样 :(
         print ("The decimal code of %s is : %d" % (str_n, res))
 
 
+提示3: Python的字符串比较函数
+
+	cmp()
+
+可以使用cmp来比较两个字符串的大小，若字符串相等，则返回0；否则，如第一个字符串较小，返回负数，否则返回一个正数。示例：
+
+	cmp("abc","abc")          # 返回0
+	cmp("abc","abd")          # 返回-1
+	cmp("abc","a")            # 返回1
+
+。
