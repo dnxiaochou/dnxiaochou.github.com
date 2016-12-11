@@ -357,6 +357,7 @@ Jannet第一次写出的程序长这样 :(
 
 
     在Linux终端运行程序，其结果为：
+
     please input the number of the jinzhishu: 16   
     please input a number: 7FFFFFFF
     The decimal code of 7FFFFFFF is : 2147483647
